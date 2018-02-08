@@ -76,6 +76,21 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = feedTable.indexPath(for: cell){
+            let post = posts[indexPath.row]
+            if let photos = post["photos"] as? [[String: Any]] {
+                let photo = photos[0]
+                let originalSize = photo["original_size"] as! [String: Any]
+                let urlString = originalSize["url"] as! String
+                let url = URL(string: urlString)
+                let detailViewController = segue.destination as! PhotosDetailsViewController
+                detailViewController.url = url
+            }
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

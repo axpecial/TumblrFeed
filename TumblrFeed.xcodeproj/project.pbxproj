@@ -14,6 +14,7 @@
 		54745B9C2022CC54004C84C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54745B9A2022CC54004C84C7 /* LaunchScreen.storyboard */; };
 		54745BA82022D37D004C84C7 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54745BA72022D37D004C84C7 /* PhotosViewController.swift */; };
 		782672787A3BC33C4083FE25 /* Pods_TumblrFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7641C6B389FA8CDCE538D33 /* Pods_TumblrFeed.framework */; };
+		F3F49F76202C094100070FB6 /* PhotosDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F49F75202C094100070FB6 /* PhotosDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		54745B9D2022CC54004C84C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54745BA72022D37D004C84C7 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		BC97C3669D78F843985B2334 /* Pods-TumblrFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TumblrFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-TumblrFeed/Pods-TumblrFeed.release.xcconfig"; sourceTree = "<group>"; };
+		F3F49F75202C094100070FB6 /* PhotosDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailsViewController.swift; sourceTree = "<group>"; };
 		F7641C6B389FA8CDCE538D33 /* Pods_TumblrFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TumblrFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				54745BA72022D37D004C84C7 /* PhotosViewController.swift */,
+				F3F49F75202C094100070FB6 /* PhotosDetailsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				542163B42022DA5200CB4DC9 /* TableViewCell.swift in Sources */,
 				54745B922022CC54004C84C7 /* AppDelegate.swift in Sources */,
+				F3F49F76202C094100070FB6 /* PhotosDetailsViewController.swift in Sources */,
 				54745BA82022D37D004C84C7 /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
