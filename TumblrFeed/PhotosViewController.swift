@@ -76,6 +76,10 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        feedTable.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         if let indexPath = feedTable.indexPath(for: cell){
