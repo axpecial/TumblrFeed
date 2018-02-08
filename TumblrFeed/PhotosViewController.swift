@@ -90,7 +90,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         profileView.af_setImage(withURL: URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/avatar")!)
         headerView.addSubview(profileView)
         
-        let dateLabel = UILabel()
+        let dateLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 30, height: 30))
         let post = posts[section]
         let date = post["date"] as! String
         print(date)
@@ -115,7 +115,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         if let indexPath = feedTable.indexPath(for: cell){
-            let post = posts[indexPath.row]
+            let post = posts[indexPath.section]
             if let photos = post["photos"] as? [[String: Any]] {
                 let photo = photos[0]
                 let originalSize = photo["original_size"] as! [String: Any]
