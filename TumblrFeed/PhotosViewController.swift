@@ -80,7 +80,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
         headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
         
-        let profileView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        let profileView = UIImageView(frame: CGRect(x: 10, y: 0, width: 30, height: 30))
         profileView.clipsToBounds = true
         profileView.layer.cornerRadius = 15;
         profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).cgColor
@@ -90,11 +90,18 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         profileView.af_setImage(withURL: URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/avatar")!)
         headerView.addSubview(profileView)
         
-        let dateLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 30, height: 30))
+        let dateLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 15))
         let post = posts[section]
-        let date = post["date"] as! String
-        print(date)
-        dateLabel.text = date
+        var dateString = post["date"] as! String
+        dateString.removeLast(4)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.date(from: dateString)
+        dateFormatter.dateFormat = "MMM dd, yyy, HH:mm"
+        let stringFromDate = dateFormatter.string(from: date!)
+        print(stringFromDate)
+        dateLabel.text = stringFromDate
+        
         headerView.addSubview(dateLabel)
         
         return headerView
